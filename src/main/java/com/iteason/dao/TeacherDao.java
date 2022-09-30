@@ -11,5 +11,5 @@ public interface TeacherDao {
 
     public List<Teacher> getAllPopular();
 
-//    public void batchUpdate(Map<String, Object> teacherMap);
+    public void batchUpdate(String tID, Integer total);
 }

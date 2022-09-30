@@ -80,4 +80,5 @@ public class User {
                 ", imgSrc='" + img_url + '\'' +
                 '}';
     }
+
 }

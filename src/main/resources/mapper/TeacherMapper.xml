@@ -6,9 +6,7 @@
         select * from teacher order by total desc
     </select>
 
-<!--    <update id="batchUpdate" parameterType="java.util.Map">-->
-<!--        <foreach collection="teacherMap" item="item" index="index" separator=";">-->
-<!--            update teacher set total = total + #{item.total} where id = #{item.id}-->
-<!--        </foreach>-->
-<!--    </update>-->
+    <update id="batchUpdate">
+        update teacher set total = #{total} where tid = #{tID}
+    </update>
 </mapper>

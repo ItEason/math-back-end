@@ -18,5 +18,5 @@ public class TeacherService {
         return teacherDao.getAllPopular();
     }
 
-//    public void batchUpdate(Map<String, Object> teacherMap) { teacherDao.batchUpdate(teacherMap); }
+    public void batchUpdate(String tID, Integer total) { teacherDao.batchUpdate(tID, total); }
 }

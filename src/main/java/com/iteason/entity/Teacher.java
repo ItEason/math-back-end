@@ -2,13 +2,12 @@ package com.iteason.entity;
 
 public class Teacher {
 
-    private String tID;
-    private String tName;
     private int age;
     private String department;
-    private int total;
-
     private int id;
+    private String tID;
+    private String tName;
+    private int total;
 
     public Teacher() {
     }

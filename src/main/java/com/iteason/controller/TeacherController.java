@@ -6,8 +6,10 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
@@ -22,9 +24,10 @@ public class TeacherController {
         return teacherService.getAllPopular();
     }
 
-//    @PostMapping("/likes")
-//    public void batchUpdate(@RequestBody Map<String, Object> teacherMap) {
-//        System.out.println(teacherMap);
-////        teacherService.batchUpdate(teacherMap);
-//    }
+    /* 更新最受欢迎老师接口 */
+    @GetMapping("/likes")
+    public String batchUpdate(@Param("tID") String tID, @Param("total") Integer total) {
+        teacherService.batchUpdate(tID, total);
+        return "ok";
+    }
 }

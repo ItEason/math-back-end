@@ -5,4 +5,8 @@
     <select id="getUser" resultType="com.iteason.entity.User">
         select * from user where binary username = #{username}
     </select>
+
+    <insert id="insertUser">
+        insert into user(username, password, img_url) values(#{username}, #{password}, #{img_url})
+    </insert>
 </mapper>

@@ -13,5 +13,9 @@ public class UserService {
 
     public User getUser(String username) {
         return userDao.getUser(username);
-    };
+    }
+
+    public int insertUser(String username, String password, String img_url) {
+        return userDao.insertUser(username, password, img_url);
+    }
 }
