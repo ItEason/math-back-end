@@ -1,84 +1,82 @@
 package com.iteason.entity;
 
 public class Teacher {
-
-    private int age;
-    private String department;
-    private int id;
-    private String tID;
-    private String tName;
-    private int total;
+    private String tid;
+    private String tname;
+    private String info;
+    private String weChat;
+    private String email;
+    private String tel;
 
     public Teacher() {
     }
 
-    public Teacher(String tID, String tName, int age, String department, int total, int id) {
-        this.tID = tID;
-        this.tName = tName;
-        this.age = age;
-        this.department = department;
-        this.total = total;
-        this.id = id;
+    public Teacher(String tid, String tname, String info, String weChat, String email, String tel) {
+        this.tid = tid;
+        this.tname = tname;
+        this.info = info;
+        this.weChat = weChat;
+        this.email = email;
+        this.tel = tel;
     }
 
-    public String gettID() {
-        return tID;
+    public String getTid() {
+        return tid;
     }
 
-    public void settID(String tID) {
-        this.tID = tID;
+    public void setTid(String tid) {
+        this.tid = tid;
     }
 
-    public String gettName() {
-        return tName;
+    public String getTname() {
+        return tname;
     }
 
-    public void settName(String tName) {
-        this.tName = tName;
+    public void setTname(String tname) {
+        this.tname = tname;
     }
 
-    public int getAge() {
-        return age;
+    public String getInfo() {
+        return info;
     }
 
-    public int getId() {
-        return id;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getWeChat() {
+        return weChat;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setWeChat(String weChat) {
+        this.weChat = weChat;
     }
 
-    public String getDepartment() {
-        return department;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getTotal() {
-        return total;
+    public String getTel() {
+        return tel;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
-
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "tID='" + tID + '\'' +
-                ", tName='" + tName + '\'' +
-                ", age=" + age +
-                ", department='" + department + '\'' +
-                ", total=" + total +
-                ", id=" + id +
+                "tid='" + tid + '\'' +
+                ", tname='" + tname + '\'' +
+                ", info='" + info + '\'' +
+                ", weChat='" + weChat + '\'' +
+                ", email='" + email + '\'' +
+                ", tel='" + tel + '\'' +
                 '}';
     }
 }

@@ -5,6 +5,8 @@ import com.iteason.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -17,5 +19,13 @@ public class UserService {
 
     public int insertUser(String username, String password, String img_url) {
         return userDao.insertUser(username, password, img_url);
+    }
+
+    public List<User> selectUsers() {
+        return userDao.selectUsers();
+    }
+
+    public User selectUser(Integer userId) {
+        return userDao.selectUser(userId);
     }
 }

@@ -9,16 +9,18 @@ public class User {
     private int age;
     private String img_url;
 
+    private int score;
     public User() {
     }
 
-    public User(int id, String username, String password, String sex, int age, String img_url) {
+    public User(int id, String username, String password, String sex, int age, String img_url, int score) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.sex = sex;
         this.age = age;
         this.img_url = img_url;
+        this.score = score;
     }
 
     public int getId() {
@@ -27,6 +29,22 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getUsername() {
@@ -77,7 +95,8 @@ public class User {
                 ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
-                ", imgSrc='" + img_url + '\'' +
+                ", img_url='" + img_url + '\'' +
+                ", score=" + score +
                 '}';
     }
 

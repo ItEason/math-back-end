@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iteason.dao.PopularDao">
+    <select id="getAllPopular" resultType="com.iteason.entity.Popular">
+        select * from popular order by total desc
+    </select>
+
+    <update id="batchUpdate">
+        update popular set total = #{total} where tid = #{tID}
+    </update>
+
+    <select id="checkTeacher" resultType="com.iteason.entity.Popular">
+        select * from popular where tname = #{username}
+    </select>
+</mapper>

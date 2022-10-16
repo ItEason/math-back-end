@@ -6,7 +6,15 @@
         select * from user where binary username = #{username}
     </select>
 
+    <select id="selectUser" resultType="com.iteason.entity.User">
+        select * from user where binary username = #{userId}
+    </select>
+
     <insert id="insertUser">
         insert into user(username, password, img_url) values(#{username}, #{password}, #{img_url})
     </insert>
+
+    <select id="selectUsers" resultType="com.iteason.entity.User">
+        select * from user order by score desc
+    </select>
 </mapper>
