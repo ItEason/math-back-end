@@ -1,5 +1,6 @@
 package com.iteason.controller;
 
+import com.iteason.entity.Popular;
 import com.iteason.entity.Teacher;
 import com.iteason.services.TeacherService;
 import org.apache.ibatis.annotations.Param;
@@ -18,5 +19,16 @@ public class TeacherController {
     @GetMapping("/teacherInfo")
     public Teacher getTeacher(@Param("name") String name) {
         return teacherService.getTeacher(name);
+    }
+
+    /* 验证当前用户是否为教师接口 */
+    @GetMapping("/checkTeacher")
+    public String checkTeacher(@Param("username") String username) {
+        Teacher teacher = null;
+        teacher = teacherService.checkTeacher(username);
+        if (teacher == null) {
+            return "false";
+        }
+        return "true";
     }
 }

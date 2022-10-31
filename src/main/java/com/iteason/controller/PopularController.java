@@ -30,14 +30,4 @@ public class PopularController {
     }
 
 
-    /* 验证当前用户是否为教师接口 */
-    @GetMapping("/checkTeacher")
-    public String checkTeacher(@Param("username") String username) {
-        Popular popular = null;
-        popular = popularService.checkTeacher(username);
-        if (popular == null) {
-            return "false";
-        }
-        return "true";
-    }
 }

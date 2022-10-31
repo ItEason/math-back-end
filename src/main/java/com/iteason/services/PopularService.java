@@ -20,8 +20,4 @@ public class PopularService {
     public void batchUpdate(String tID, Integer total) {
         popularDao.batchUpdate(tID, total);
     }
-
-    public Popular checkTeacher(String username) {
-        return popularDao.checkTeacher(username);
-    }
 }

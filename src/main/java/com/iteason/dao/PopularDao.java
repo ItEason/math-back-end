@@ -11,6 +11,4 @@ public interface PopularDao {
     public List<Popular> getAllPopular();
 
     public void batchUpdate(String tID, Integer total);
-
-    public Popular checkTeacher(String username);
 }

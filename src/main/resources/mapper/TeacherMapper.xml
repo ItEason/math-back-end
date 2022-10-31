@@ -5,4 +5,8 @@
     <select id="getTeacher" resultType="com.iteason.entity.Teacher">
         select * from teacher where tname = #{name}
     </select>
+
+    <select id="checkTeacher" resultType="com.iteason.entity.Teacher">
+        select * from teacher where tname = #{username}
+    </select>
 </mapper>

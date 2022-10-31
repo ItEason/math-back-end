@@ -9,8 +9,4 @@
     <update id="batchUpdate">
         update popular set total = #{total} where tid = #{tID}
     </update>
-
-    <select id="checkTeacher" resultType="com.iteason.entity.Popular">
-        select * from popular where tname = #{username}
-    </select>
 </mapper>

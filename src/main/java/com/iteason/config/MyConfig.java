@@ -20,7 +20,7 @@ public class MyConfig implements WebMvcConfigurer {
                 .allowedMethods("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true)
                 .maxAge(3600)
-                .allowedHeaders("*");
-
+                .allowedHeaders("*")
+                .allowedOrigins("http://1.12.235.213:8088");
     }
 }
