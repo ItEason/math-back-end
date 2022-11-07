@@ -4,6 +4,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.iteason.dao.CourseDao">
     <select id="getCourse" resultType="com.iteason.entity.Course">
-        select * from course order by url asc
+        select *
+        from course
+        order by url asc
     </select>
+
+    <select id="getMaxCourse" resultType="int">
+        select count(*)
+        from course
+    </select>
+
+    <select id="searchCourse" resultType="com.iteason.entity.Course">
+        SELECT *
+        FROM `course`
+        where tname = #{params}
+           or contents like concat('%', #{params}, '%')
+    </select>
+
+    <select id="getCourseById" resultType="com.iteason.entity.Course">
+        select *
+        from course
+        where cid = #{id}
+    </select>
+
+    <insert id="addCourse">
+        insert into course(cname, tname, contents, url, cover)
+        values (#{cname}, #{tname}, #{contents}, "", #{cover})
+    </insert>
+
+    <update id="updateUrl">
+        update course
+        set url = #{url}
+        where cname = #{cname}
+    </update>
 </mapper>

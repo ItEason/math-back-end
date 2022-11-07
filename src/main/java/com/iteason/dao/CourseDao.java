@@ -9,4 +9,14 @@ import java.util.List;
 public interface CourseDao {
 
     public List<Course> getCourse();
+
+    public int getMaxCourse();
+
+    public List<Course> searchCourse(String params);
+
+    public List<Course> getCourseById(int id);
+
+    public int addCourse(String cname, String tname, String contents, String cover);
+
+    public int updateUrl(String url, String cname);
 }

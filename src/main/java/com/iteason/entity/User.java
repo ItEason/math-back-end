@@ -9,11 +9,13 @@ public class User {
     private int age;
     private String img_url;
 
+    private String state;
+
     private int score;
     public User() {
     }
 
-    public User(int id, String username, String password, String sex, int age, String img_url, int score) {
+    public User(int id, String username, String password, String sex, int age, String img_url, int score, String state) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -21,6 +23,15 @@ public class User {
         this.age = age;
         this.img_url = img_url;
         this.score = score;
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public int getId() {
@@ -96,8 +107,8 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", img_url='" + img_url + '\'' +
+                ", state=" + state +
                 ", score=" + score +
                 '}';
     }
-
 }

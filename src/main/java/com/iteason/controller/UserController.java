@@ -8,7 +8,9 @@ import org.springframework.boot.web.server.Cookie;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -19,18 +21,26 @@ public class UserController {
 
     /* 验证用户登录接口 */
     @PostMapping("/user")
-    public String getUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public Map<String, String> getUser(@RequestParam("username") String username, @RequestParam("password") String password) {
         /* 执行mapper层中sql语句，接收对应的结果集 */
         User user = userService.getUser(username);
+        Map<String, String> resultMap = new HashMap<>();
         if (user == null) {
+            resultMap.put("msg", "user_err");
+            resultMap.put("state", "0");
             /* 数据库查询没有该用户时接口返回的数据 */
-            return "user_err";
+            return resultMap;
         } else if (password.equals(user.getPassword()) == false) {
+            resultMap.put("msg", "psw_err");
+            resultMap.put("state", user.getState());
             /* 数据库查询存在该用户但是密码错误接口返回的数据 */
-            return "psw_err";
+            return resultMap;
         } else {
+            resultMap.put("imgSrc", user.getImgSrc());
+            resultMap.put("msg", "200");
+            resultMap.put("state", user.getState());
             /* 用户存在且密码正确时接口返回的数据 */
-            return user.getImgSrc();
+            return resultMap;
         }
     }
 

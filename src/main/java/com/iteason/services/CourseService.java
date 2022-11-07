@@ -15,5 +15,25 @@ public class CourseService {
 
     public List<Course> getCourse() {
         return courseDao.getCourse();
-    };
+    }
+
+    public int getMaxCourse() {
+        return courseDao.getMaxCourse();
+    }
+
+    public List<Course> searchCourse(String params) {
+        return courseDao.searchCourse(params);
+    }
+
+    public List<Course> getCourseById(int id) {
+        return courseDao.getCourseById(id);
+    }
+
+    public int addCourse(String cname, String tname, String contents, String cover) {
+        return courseDao.addCourse(cname, tname, contents, cover);
+    }
+
+    public int updateUrl(String url, String cname) {
+        return courseDao.updateUrl(url, cname);
+    }
 }

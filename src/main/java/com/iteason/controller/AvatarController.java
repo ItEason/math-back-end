@@ -1,20 +1,17 @@
 package com.iteason.controller;
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 
 @RestController
 @RequestMapping("/api")
 public class AvatarController {
-
     // 注册用户上传头像接口
     @PostMapping("/upload")
     public String upload(@RequestParam("file") MultipartFile file, Model model) {
@@ -30,8 +27,23 @@ public class AvatarController {
             model.addAttribute("error", "请上传png/jpg/jpeg格式的图片文件！");
             return "false";
         }
+
+        String[] chars = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g",
+                "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+
+        StringBuffer shortBuffer = new StringBuffer();
+        String uuid = UUID.randomUUID().toString().replace("-", "");
+        for (int j = 0; j < 8; j++) {
+            String str = uuid.substring(j * 4, j * 4 + 4);
+            int par = Integer.parseInt(str, 16);
+            shortBuffer.append(chars[par % 36]);
+        }
+        String s = shortBuffer.toString();
+
+        String file_name = s + suffix;
         //确定文件存放路径
-        File dest = new File("E:/项目/Hope mathematics/math/src/assets/" + fileName);
+        File dest = new File("/project/math/dist/img/" + file_name);
+
         //存储文件
         try {
             file.transferTo(dest);
@@ -40,7 +52,8 @@ public class AvatarController {
             throw new RuntimeException("文件存储失败，服务器异常", e);
         }
         // 返回最后的成功字符串
-        return "true";
+        return file_name;
     }
+
 
 }
