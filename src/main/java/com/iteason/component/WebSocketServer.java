@@ -78,6 +78,7 @@ public class WebSocketServer {
             jsonObject.set("text", text);  // text 同上面的text
             this.sendMessage(jsonObject.toString(), toSession);
             log.info("发送给用户username={}，消息：{}", toUsername, jsonObject.toString());
+            System.out.println(jsonObject.toString());
         } else {
             log.info("发送失败，未找到用户username={}的session", toUsername);
         }

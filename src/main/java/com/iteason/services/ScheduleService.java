@@ -13,7 +13,13 @@ public class ScheduleService {
     @Autowired    //注入userDao对象
     private ScheduleDao teacherDao;
 
-    public List<Schedule> getTeacher(String day){
+    public List<Schedule> getTeacher(String day) {
         return teacherDao.getTeacher(day);
+    }
+
+    @Autowired
+    private ScheduleDao scheduleDao;
+    public int insertSchedule(String name, int age, String department, String date, String day) {
+        return scheduleDao.insertSchedule(name, age, department, date, day);
     }
 }

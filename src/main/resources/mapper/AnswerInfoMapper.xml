@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iteason.dao.AnswerInfoDao">
+    <select id="getInfos" resultType="com.iteason.entity.AnswerInfo">
+        select a.id, a.contents, a.answerer, a.image, b.comments, a.qid
+        from answer as a,
+             question as b
+        where a.qid = b.id
+          and b.questioner = #{questioner};
+    </select>
+
+    <delete id="deleteAnswer">
+        delete
+        from answer
+        where id = #{id}
+    </delete>
+</mapper>

@@ -19,4 +19,6 @@ public interface CourseDao {
     public int addCourse(String cname, String tname, String contents, String cover);
 
     public int updateUrl(String url, String cname);
+
+    public int updateClick(int cid);
 }

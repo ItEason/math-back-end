@@ -16,4 +16,8 @@ public class ActivityService {
     public List<Activity> getActivity() {
         return activityDao.getActivity();
     }
+
+    public int addActivity(String activity, String department, String title, String image) {
+        return activityDao.addActivity(activity, department, title, image);
+    }
 }

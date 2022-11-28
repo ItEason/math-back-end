@@ -4,6 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.iteason.dao.ScheduleDao">
     <select id="getTeacher" resultType="com.iteason.entity.Schedule">
-        select * from schedule where day = #{day}
+        select *
+        from schedule
+        where day like  concat(#{day}, '%') order by date asc
     </select>
+
+    <insert id="insertSchedule">
+        insert into schedule(name, age, department, date, day)
+        values (#{name}, #{age}, #{department}, #{date}, #{day})
+    </insert>
 </mapper>

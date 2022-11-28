@@ -5,14 +5,34 @@ public class Activity {
     private int id;
     private String activity;
     private String department;
+    private String title;
+    private String image;
 
     public Activity() {
     }
 
-    public Activity(int id, String activity, String department) {
+    public Activity(int id, String activity, String department, String title, String image) {
         this.id = id;
         this.activity = activity;
         this.department = department;
+        this.title = title;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getId() {
@@ -45,6 +65,8 @@ public class Activity {
                 "id=" + id +
                 ", activity='" + activity + '\'' +
                 ", department='" + department + '\'' +
+                ", title='" + title + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

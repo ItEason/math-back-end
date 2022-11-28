@@ -28,12 +28,17 @@ public class ActivityController {
         return activityService.getActivity();
     }
 
+    @GetMapping("/addActivity")
+    public int addActivity(@RequestParam("activity") String activity, @RequestParam("department") String department, @RequestParam("title") String title, @RequestParam("image") String image) {
+        return activityService.addActivity(activity, department, title, image);
+    }
+
     @Autowired
     private QuestionService questionService;
 
     /* 用户反馈接口 */
     @GetMapping("/question")
-    public int insertFeedBack(@RequestParam("question") String question, @RequestParam("grade") String grade, @RequestParam("problem") String problem, @RequestParam("questioner") String questioner) {
+    public int insertFeedBack(@RequestParam("question") String question, @RequestParam("grade") String grade, @RequestParam("problem") String problem, @RequestParam("questioner") String questioner, @RequestParam("image") String image) {
         /* 设置对应的日期样式 */
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         Date now = new Date();
@@ -42,11 +47,22 @@ public class ActivityController {
         String date = sdf.format(now);
 
         /* 执行对应的方法，question */
-        return questionService.insertFeedBack(question, date, grade, problem, questioner);
+        return questionService.insertFeedBack(question, date, grade, problem, questioner, image);
     }
 
     @GetMapping("/getProblems")
     public List<Question> getProblem() {
         return questionService.getProblem();
+    }
+
+
+    @GetMapping("/getQuestionById")
+    public List<Question> getQuestionById(@RequestParam("search") String params) {
+        return questionService.getQuestionById(params);
+    }
+
+    @GetMapping("/getQuestion")
+    public List<Question> getQuestion(@RequestParam("questioner") String params) {
+        return questionService.getQuestion(params);
     }
 }

@@ -36,4 +36,8 @@ public class CourseService {
     public int updateUrl(String url, String cname) {
         return courseDao.updateUrl(url, cname);
     }
+
+    public int updateClick(int cid) {
+        return courseDao.updateClick(cid);
+    }
 }

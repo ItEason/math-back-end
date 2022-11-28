@@ -5,6 +5,12 @@
 
 <mapper namespace="com.iteason.dao.ActivityDao">
     <select id="getActivity" resultType="com.iteason.entity.Activity">
-        select * from activities
+        select *
+        from activities
     </select>
+
+    <insert id="addActivity">
+        insert into activities(activity, department, title, image)
+        values (#{activity}, #{department}, #{title}, #{image})
+    </insert>
 </mapper>

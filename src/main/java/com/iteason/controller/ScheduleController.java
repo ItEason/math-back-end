@@ -20,4 +20,9 @@ public class ScheduleController {
         return scheduleService.getTeacher(day);
     }
 
+    @GetMapping("/insertSchedule")
+    public int insertSchedule(@RequestParam("name") String name,@RequestParam("age") int age,@RequestParam("department") String department,@RequestParam("date") String date,@RequestParam("day")String day){
+        return scheduleService.insertSchedule(name, age, department, date, day);
+    }
+
 }

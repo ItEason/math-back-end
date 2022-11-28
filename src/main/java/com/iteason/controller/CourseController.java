@@ -107,4 +107,9 @@ public class CourseController {
             return resultMap;
         }
     }
+
+    @GetMapping("/updateClick")
+    public int updateClick(@RequestParam("cid") int cid) {
+        return courseService.updateClick(cid);
+    }
 }

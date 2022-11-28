@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iteason.dao.CommentDao">
+    <select id="getComment" resultType="com.iteason.entity.Comment">
+        select *
+        from comment
+        where cid = #{cid}
+    </select>
+
+    <insert id="insertComment">
+        insert into comment(cid, comments, author, date, avatar)
+        values (#{cid}, #{comment}, #{author}, #{date}, #{avatar})
+    </insert>
+</mapper>

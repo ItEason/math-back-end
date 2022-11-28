@@ -28,4 +28,13 @@ public class UserService {
     public User selectUser(Integer userId) {
         return userDao.selectUser(userId);
     }
+
+    public List<User> getUserByName(String name) {
+        return userDao.getUserByName(name);
+    }
+
+    /* 更新用户的积分score函数 */
+    public int updateScore(int score, String username) {
+        return userDao.updateScore(score, username);
+    }
 }

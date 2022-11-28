@@ -7,13 +7,16 @@ import lombok.Data;
 public class Schedule {
     private int id;
     private String name;
+
+    private int age;
     private String department;
     private String date;
     private String day;
 
-    public Schedule(int id, String name, String department, String date, String day) {
+    public Schedule(int id, String name, int age, String department, String date, String day) {
         this.id = id;
         this.name = name;
+        this.age = age;
         this.department = department;
         this.date = date;
         this.day = day;
@@ -21,6 +24,14 @@ public class Schedule {
 
     public int getId() {
         return id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public void setId(int id) {
@@ -64,6 +75,7 @@ public class Schedule {
         return "Schedule{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", age=" + age +
                 ", department='" + department + '\'' +
                 ", date='" + date + '\'' +
                 ", day='" + day + '\'' +

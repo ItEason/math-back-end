@@ -70,4 +70,14 @@ public class UserController {
         List<User> list = userService.selectUsers();
         return list;
     }
+
+    @GetMapping("/getUser")
+    public List<User> getUserByName(@RequestParam("name") String name) {
+        return userService.getUserByName(name);
+    }
+
+    @GetMapping("/updateScore")
+    public int updateScore(@RequestParam("score") int score, @RequestParam("username") String username) {
+        return userService.updateScore(score, username);
+    }
 }

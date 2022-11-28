@@ -15,4 +15,9 @@ public interface UserDao {
     public User selectUser(Integer userId);
 
     public List<User> selectUsers();
+
+    public List<User> getUserByName(String name);
+
+    /* 更新用户的积分score函数 */
+    public int updateScore(int score, String username);
 }

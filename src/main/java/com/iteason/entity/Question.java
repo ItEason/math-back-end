@@ -12,16 +12,19 @@ public class Question {
 
     private String questioner;
 
+    private String image;
+
     public Question() {
     }
 
-    public Question(int id, String comments, String date, String grade, String problem, String questioner) {
+    public Question(int id, String comments, String date, String grade, String problem, String questioner, String image) {
         this.id = id;
         this.comments = comments;
         this.date = date;
         this.grade = grade;
         this.problem = problem;
         this.questioner = questioner;
+        this.image = image;
     }
 
     public String getQuestioner() {
@@ -34,6 +37,14 @@ public class Question {
 
     public int getId() {
         return id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setId(int id) {
@@ -81,6 +92,7 @@ public class Question {
                 ", grade='" + grade + '\'' +
                 ", problem='" + problem + '\'' +
                 ", questioner='" + questioner + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

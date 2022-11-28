@@ -37,4 +37,10 @@
         set url = #{url}
         where cname = #{cname}
     </update>
+
+    <update id="updateClick">
+        update course
+        set click = click + 1
+        where cid = #{cid}
+    </update>
 </mapper>

@@ -9,16 +9,19 @@ public class Course {
     private String contents;
     private String cover;
 
+    private int click;
+
     public Course() {
     }
 
-    public Course(String cid, String cname, String tname, String url, String contents, String cover) {
+    public Course(String cid, String cname, String tname, String url, String contents, String cover, int click) {
         this.cid = cid;
         this.cname = cname;
         this.tname = tname;
         this.url = url;
         this.contents = contents;
         this.cover = cover;
+        this.click = click;
     }
 
     public String getCid() {
@@ -69,15 +72,24 @@ public class Course {
         this.cover = cover;
     }
 
+    public int getClick() {
+        return click;
+    }
+
+    public void setClick(int click) {
+        this.click = click;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
-                "cid=" + cid +
+                "cid='" + cid + '\'' +
                 ", cname='" + cname + '\'' +
                 ", tname='" + tname + '\'' +
                 ", url='" + url + '\'' +
                 ", contents='" + contents + '\'' +
                 ", cover='" + cover + '\'' +
+                ", click=" + click +
                 '}';
     }
 }

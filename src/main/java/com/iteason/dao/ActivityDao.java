@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface ActivityDao {
     public List<Activity> getActivity();
+
+    public int addActivity(String activity, String department, String title, String image);
 }
